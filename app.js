@@ -1,6 +1,6 @@
 // ============================================================
 // app.js
-// Logika utama Buku Tamu Online
+// Logika utama Buku Tamu Online 
 // Fungsi: addMessage, loadMessages, updateStatistics, validateForm
 // + Dark mode, Toast notification, Character counter
 // ============================================================
