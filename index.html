@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buku Tamu Online — Firebase Firestore</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast" aria-live="polite"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="header-logo">📖</div>
+      <h1 class="header-title">Buku Tamu Online</h1>
+      <p class="header-subtitle">Belajar Firebase Firestore · CRUD Database Cloud</p>
+    </div>
+    <button id="themeToggle" class="theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">
+      <span id="themeIcon">🌙</span>
+    </button>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main">
+    <div class="container">
+
+      <!-- Form Card -->
+      <section class="card form-card">
+        <h2 class="card-title">✍️ Tinggalkan Pesan</h2>
+
+        <div class="form-group">
+          <label for="inputName" class="form-label">Nama</label>
+          <input
+            type="text"
+            id="inputName"
+            class="form-input"
+            placeholder="Masukkan nama kamu..."
+            maxlength="50"
+            autocomplete="name"
+          />
+          <span class="field-error" id="errorName"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="inputMessage" class="form-label">Pesan</label>
+          <textarea
+            id="inputMessage"
+            class="form-textarea"
+            placeholder="Tulis pesanmu di sini..."
+            maxlength="300"
+            rows="4"
+          ></textarea>
+          <div class="char-counter">
+            <span class="field-error" id="errorMessage"></span>
+            <span id="charCount" class="char-count">0 / 300</span>
+          </div>
+        </div>
+
+        <button id="btnSend" class="btn btn-primary" onclick="addMessage()">
+          <span id="btnText">Kirim Pesan</span>
+          <span id="btnSpinner" class="spinner hidden"></span>
+        </button>
+      </section>
+
+      <!-- Stats Card -->
+      <section class="card stats-card">
+        <div class="stat-item">
+          <span class="stat-icon">💬</span>
+          <div>
+            <span class="stat-label">Total Pesan</span>
+            <span id="totalMessages" class="stat-value">—</span>
+          </div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-icon">🔄</span>
+          <span class="stat-label-sm">Data diperbarui otomatis secara realtime</span>
+        </div>
+      </section>
+
+      <!-- Messages Section -->
+      <section class="messages-section">
+        <h2 class="section-title">📬 Pesan Terbaru</h2>
+        <div id="loadingMessages" class="loading-wrapper">
+          <div class="loading-spinner"></div>
+          <p class="loading-text">Memuat pesan...</p>
+        </div>
+        <div id="messageList" class="message-list hidden"></div>
+        <p id="emptyState" class="empty-state hidden">Belum ada pesan. Jadilah yang pertama! 🎉</p>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Dibuat untuk belajar <strong>Firebase Firestore</strong> · Web Development Modern 2026</p>
+  </footer>
+
+  <!-- Firebase SDK (ES Module) -->
+  <script type="module" src="assets/js/firebase-config.js"></script>
+  <script type="module" src="assets/js/app.js"></script>
+
+</body>
+</html>
