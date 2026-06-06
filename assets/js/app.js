@@ -251,7 +251,7 @@ inputName.addEventListener("keydown", (e) => {
 });
 
 // Expose addMessage ke onclick di HTML
-window.addMessage = addMessage;
+document.getElementById("btnSend").addEventListener("click", addMessage);
 
 // ─── Init ───────────────────────────────────────────────────
 initTheme();
